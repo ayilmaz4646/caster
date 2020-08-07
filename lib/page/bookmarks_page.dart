@@ -1,7 +1,7 @@
-
+import 'package:caster/page/add_bookmark_page.dart';
+import 'package:flutter/material.dart';
 import 'package:caster/model/bookmark.dart';
 import 'package:caster/widget/bookmarks_list_widget.dart';
-import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class BookmarksPage extends StatelessWidget {
@@ -17,6 +17,16 @@ class BookmarksPage extends StatelessWidget {
         title: Text("My Bookmark"),
       ),
       body: BookmarksListWidget(bookmarksList),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton.extended(
+        icon: Icon(Icons.add),
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => AddBookmarkPage()),
+          );
+        }, 
+        label: Text("Add"),
+      ),
     );
   }
 }
