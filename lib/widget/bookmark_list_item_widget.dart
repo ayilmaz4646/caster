@@ -1,10 +1,10 @@
 import "package:flutter/material.dart";
 import 'package:caster/model/bookmark.dart';
 
-class BookmarkListItemwidget extends StatelessWidget {
+class BookmarkListItemWidget extends StatelessWidget {
   Bookmark bookmark;
 
-  BookmarkListItemwidget(this.bookmark);
+  BookmarkListItemWidget(this.bookmark);
 
   @override
   Widget build(BuildContext context) {
