@@ -11,7 +11,7 @@ class BookmarksListWidget extends StatelessWidget {
     return ListView(
       children: <Widget>[
         BookmarkListItemWidget(bookmarksList[0]),
-        BookmarkListItemWidget(bookmarksList[0]),
+        BookmarkListItemWidget(bookmarksList[1]),
       ],
     );
   }
