@@ -1,3 +1,4 @@
+import 'package:caster/model/bookmark.dart';
 import 'package:flutter/material.dart';
 
 class AddBookmarkPage extends StatefulWidget {
@@ -22,12 +23,11 @@ class _AddBookmarkPageState extends State<AddBookmarkPage> {
           backgroundColor: Colors.green,
           onPressed: () {
             String title = _titleTextController.text;
-            String link  = _linkTextController.text;
+            String link = _linkTextController.text;
 
             Scaffold.of(context).hideCurrentSnackBar();
             if (isInputValid(title, link)) {
-              print("title: ${_titleTextController.text}");
-              print("link: ${_linkTextController.text}");
+              Navigator.pop(context, Bookmark(title, link));
             } else {
               showInputError(context, title, link);
             }
@@ -36,35 +36,31 @@ class _AddBookmarkPageState extends State<AddBookmarkPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
-        child: Column(
-          children: <Widget>[
-            TextFormField(
-              autofocus: true,
-              controller: _titleTextController,
-              textInputAction: TextInputAction.next,
-              onFieldSubmitted: (textInput) {
-                FocusScope.of(context).requestFocus(_linkFocusNode);
-              },
-              decoration: InputDecoration(
+        child: Column(children: <Widget>[
+          TextFormField(
+            autofocus: true,
+            controller: _titleTextController,
+            textInputAction: TextInputAction.next,
+            onFieldSubmitted: (textInput) {
+              FocusScope.of(context).requestFocus(_linkFocusNode);
+            },
+            decoration: InputDecoration(
                 icon: Icon(Icons.title),
                 labelText: "Title",
                 hintText: "Title of the bookmark",
-                border: OutlineInputBorder()
-              ),
-            ),
-            SizedBox(height: 16),
-            TextFormField(
-              controller: _linkTextController,
-              focusNode: _linkFocusNode,
-              decoration: InputDecoration(
+                border: OutlineInputBorder()),
+          ),
+          SizedBox(height: 16),
+          TextFormField(
+            controller: _linkTextController,
+            focusNode: _linkFocusNode,
+            decoration: InputDecoration(
                 icon: Icon(Icons.link),
                 labelText: "Url",
                 hintText: "Webpage link",
-                border: OutlineInputBorder()
-              ),
-            ),
-          ]
-        ),
+                border: OutlineInputBorder()),
+          ),
+        ]),
       ),
     );
   }
@@ -83,9 +79,9 @@ class _AddBookmarkPageState extends State<AddBookmarkPage> {
 
   void showInputError(BuildContext context, String title, String link) {
     if (title.isEmpty) {
-      showSnackBar(context, "Title is empty");
+      showSnackBar(context, "Title cannot be  empty");
     } else if (link.isEmpty) {
-      showSnackBar(context, "Link is empty");
+      showSnackBar(context, "Link cannot be empty");
     }
   }
 
