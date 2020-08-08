@@ -6,7 +6,7 @@ import 'package:caster/widget/bookmarks_list_widget.dart';
 // ignore: must_be_immutable
 class BookmarksPage extends StatelessWidget {
   List<Bookmark> bookmarksList = [
-    Bookmark("Flutter", "https://flutter.com"),
+    Bookmark("Flutter", "https://flutter.dev"),
     Bookmark("Google", "https://google.com")
   ];
 
