@@ -4,7 +4,7 @@ import 'package:caster/model/bookmark.dart';
 
 // ignore: must_be_immutable
 class BookmarkGridItemWidget extends StatelessWidget {
-  Bookmark bookmark;
+  final Bookmark bookmark;
 
   BookmarkGridItemWidget(this.bookmark);
 
