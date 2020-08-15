@@ -2,6 +2,7 @@ import 'package:caster/model/bookmark.dart';
 import 'package:caster/widget/view_web_page_widget.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class ViewBookmarkPage extends StatelessWidget {
   Bookmark bookmark;
   ViewBookmarkPage(this.bookmark);

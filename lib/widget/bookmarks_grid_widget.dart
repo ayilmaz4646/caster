@@ -1,7 +1,6 @@
 import 'package:caster/widget/bookmark_grid_item_widget.dart';
 import "package:flutter/material.dart";
 import 'package:caster/model/bookmark.dart';
-import 'package:caster/widget/bookmark_list_item_widget.dart';
 
 class BookmarksGridWidget extends StatelessWidget {
   final List<Bookmark> bookmarksList;
